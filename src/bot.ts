@@ -13,6 +13,7 @@ import {
 } from "./command/nsfw/main";
 import {message} from "telegraf/filters";
 import {checkAllSitesCommand} from "./helpers/checkSite";
+import {authMiddleware} from "./authMiddleware";
 
 config();
 
@@ -25,6 +26,8 @@ bot.catch(async (err, ctx) => {
     console.error("❗ Failed to send error message:", e);
   }
 });
+
+bot.use(authMiddleware);
 
 bot.use(session());
 bot.use((ctx, next) => {
