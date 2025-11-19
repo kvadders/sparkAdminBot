@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn src/main.ts",
-    "build": "tsc && cp -r assets dist/assets && cp -r src/locales dist/",
+    "build": "tsc && cp -r src/locales dist/",
     "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
